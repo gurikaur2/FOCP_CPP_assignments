@@ -1,0 +1,1 @@
+/* WAP that prints a spiral pattern of numbers for a given size of n */
