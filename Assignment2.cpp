@@ -4,36 +4,113 @@ using namespace std;
 
 class Person
 {
-    public:
+    
     string name;
     int age;
     int ID;
     int contact;
-    Person();//default constructor
-    Person(string name,int age, int ID, int contact);//parametarised constructor
-    Person (const Person &a);//copy constructor
+    public: 
+    Person() : name(""), age(0), ID(0), contact(0) {}//default constructor
+    Person(string n, int a, int i, int c) : name(n), age(a), ID(i), contact(c) {}//parametarised constructor
+    Person(const Person &p) : name(p.name), age(p.age), ID(p.ID), contact(p.contact) {}//copy constructor
     void displayPerson();
-    ~Person()
+
+    ~Person(){}//destructor
+
+    string getname() //getter for name
     {
-        cout<<"\n Destructor called"<<endl;
+        return name;
+    }
+    void setname(string n)//setter for name
+    {
+        name=n;
+    }
+
+    int getage()//getter for age
+    {
+        return age;
+    }
+    void setage(int a)//setter for age
+    {
+        age=a;
+    }
+
+    int getID()//getter for ID
+    {
+        return ID;
+    }
+    void setID(int i)//setter for ID
+    {
+        ID=i;
+    }
+
+    int getContact()//getter for contact info
+    {
+        return contact;
+    }
+    void setContact(int c)//setter for contact info
+    {
+        contact=c;
     }
     
+    void displayPerson()
+    {
+        cout<<"Name: "<<name<<"\n Age: "<<age<<"\n ID: "<<ID<<"\n Contact info: "<<contact<<endl;
+    }
 };
 
 class Student
 {
-    public:
     int enroll_date;
     string program;
     int gpa;
+    
 };
 
 class Professor
 {
-    public:
     string department;
     string specialisation;
     int hire_date;
+    public: 
+    Professor() : department(""), specialisation(""), hire_date(0) {}//default constructor
+    Professor(string d, string s, int h) : department(d), specialisation(s), hire_date(h) {}//parametarised constructor
+    Professor(const Professor &p) : department(p.department), specialisation(p.specialisation), hire_date(p.hire_date) {}//copy constructor
+    void displayProfessor();
+
+    ~Professor(){}//destructor
+
+    string getdepartment() //getter for department
+    {
+        return department;
+    }
+    void setname(string d)//setter for department
+    {
+        department=d;
+    }
+
+    string getspecialisation()//getter for specialisation
+    {
+        return specialisation;
+    }
+    void setspecialisation(int s)//setter for specialisation
+    {
+        specialisation=s;
+    }
+
+    int getHireDate()//getter for hire date
+    {
+        return hire_date;
+    }
+    void setHireDate(int h)//setter for hire date
+    {
+        hire_date=h;
+    }
+    
+    void displayProfessor()
+    {
+        cout<<"Department: "<<department<<"\n Specialisation: "<<specialisation<<"\n Hire date: "<<hire_date<<endl;
+    }
 };
 
 class Course
