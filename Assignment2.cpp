@@ -64,7 +64,45 @@ class Student
     int enroll_date;
     string program;
     int gpa;
-    
+    public:
+    Student():enroll_date(0), program(""),gpa(0) {} //default constructor
+    Student(int e, string p, int g):enroll_date(e),program(p),gpa(g) {} //parametarised constructor
+    Student (const Student &s): enroll_date(s.enroll_date), program (s.program), gpa(s.gpa) {} //copy constructor
+    void displayStudent();
+
+    ~Student() {} //destructor
+
+    int getDate()//getter for enrollment date
+    {
+        return enroll_date;
+    }
+    void setDate(int e)//setter for enrollment date
+    {
+        enroll_date=e;
+    }
+
+    string getProgram() //getter for program
+    {
+        return program;
+    }
+    void setProgram(string p)//setter for program
+    {
+        program=p;
+    }
+
+    int getGPA()//getter for gpa
+    {
+        return gpa;
+    }
+    void setGPA(int g)//setter for gpa
+    {
+        gpa=g;
+    }
+
+    void displayStudent()
+    {
+        cout<<"Enrollment date:"<<enroll_date<<"\n Program:"<<program<<"\n GPA:"<<gpa<<endl;
+    }
 };
 
 class Professor
