@@ -213,6 +213,43 @@ class Department
     string name;
     string location;
     int budget;
+    Department():name(""),location(""),budget(0) {}//default constructor
+    Department(string n, string l, int b): name(n),location(l),budget(b) {}//parameterised constructor
+    Department(const Department &d): name(d.name), location(d.location),budget(d.budget) {} //copy constructor
+    void displayDepartment() {}
+    ~Department () {}//destructor
+
+    string getName()//getter for name
+    {
+        return name;
+    }
+    void setName(string n)//setter for name
+    {
+        name=n;
+    }
+
+    string getLocation()//getter for location
+    {
+        return location;
+    }
+    void setLocation(string l)//setter for location
+    {
+        location=l;
+    }
+
+    int getBudget()//getter for budget
+    {
+        return budget;
+    }
+    void setBudget(int b)//setter for budget
+    {
+        budget=b;
+    }
+
+    void displayDepartment()
+    {
+        cout<<"Deparment name:"<<name<<"\n Department location:"<<location<<"\n Department budget:"<<budget<<endl;
+    }
 };
 
 int main ()
