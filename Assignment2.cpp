@@ -157,6 +157,55 @@ class Course
     string title;
     int credits;
     string description;
+    public:
+    Course(): code(0), title(""), credits(0), description("") {}//default constructor
+    Course(int c, string t, int cred, string d):code(c),title(t),credits(cred),description(d) {}//parameterised constructor
+    Course(const Course  &c):code(c.code),title(c.title),credits(c.credits),description(c.description) {} //copy constructor
+    void displayCourse();
+    ~Course() {}//destructor
+
+    int getCode()//getter for code
+    {
+        return code;
+    }
+    void setCode(int c)//getter for code
+    {
+        code=c;
+    }
+
+    string getTitle()//getter for title
+    {
+        return title;
+    }
+    void setTitle(string t)//setter for title
+    {
+        title=t;
+    }
+
+    int getCredits()//getter for credits
+    {
+        return credits;
+    }
+    void setCredits(int cred)//setter for credits
+    {
+        credits=cred;
+    }
+
+    string getDescription()//getter for description
+    {
+        return description;
+    }
+    void setDescription(string d)//setter for description
+    {
+        description=d;
+    }
+    
+    void displayCourse()
+    {
+        cout<<"Course code:"<<code<<"\n Course Title:"<<title<<"\n Course credits:"<<credits<<"\n Course description:"<<description<<endl;
+    }
+
+
 };
 
 class Department
