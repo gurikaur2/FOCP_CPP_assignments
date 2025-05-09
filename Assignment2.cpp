@@ -8,12 +8,12 @@ class Person
     string name;
     int age;
     int ID;
-    int contact;
+    long int contact;
     public: 
     Person() : name(""), age(0), ID(0), contact(0) {}//default constructor
-    Person(string n, int a, int i, int c) : name(n), age(a), ID(i), contact(c) {}//parametarised constructor
+    Person(string n, int a, int i, long c) : name(n), age(a), ID(i), contact(c) {}//parametarised constructor
     Person(const Person &p) : name(p.name), age(p.age), ID(p.ID), contact(p.contact) {}//copy constructor
-    void displayPerson();
+   // void displayPerson();
 
     ~Person(){}//destructor
 
@@ -44,11 +44,11 @@ class Person
         ID=i;
     }
 
-    int getContact()//getter for contact info
+   long getContact()//getter for contact info
     {
         return contact;
     }
-    void setContact(int c)//setter for contact info
+    void setContact(long c)//setter for contact info
     {
         contact=c;
     }
@@ -63,12 +63,12 @@ class Student
 {
     int enroll_date;
     string program;
-    int gpa;
+    float gpa;
     public:
     Student():enroll_date(0), program(""),gpa(0) {} //default constructor
-    Student(int e, string p, int g):enroll_date(e),program(p),gpa(g) {} //parametarised constructor
+    Student(int e, string p, float g):enroll_date(e),program(p),gpa(g) {} //parametarised constructor
     Student (const Student &s): enroll_date(s.enroll_date), program (s.program), gpa(s.gpa) {} //copy constructor
-    void displayStudent();
+   // void displayStudent();
 
     ~Student() {} //destructor
 
@@ -90,11 +90,11 @@ class Student
         program=p;
     }
 
-    int getGPA()//getter for gpa
+   float getGPA()//getter for gpa
     {
         return gpa;
     }
-    void setGPA(int g)//setter for gpa
+    void setGPA(float g)//setter for gpa
     {
         gpa=g;
     }
@@ -109,12 +109,12 @@ class Professor
 {
     string department;
     string specialisation;
-    int hire_date;
+    string hire_date;
     public: 
-    Professor() : department(""), specialisation(""), hire_date(0) {}//default constructor
-    Professor(string d, string s, int h) : department(d), specialisation(s), hire_date(h) {}//parametarised constructor
+    Professor() : department(""), specialisation(""), hire_date("") {}//default constructor
+    Professor(string d, string s, string h) : department(d), specialisation(s), hire_date(h) {}//parametarised constructor
     Professor(const Professor &p) : department(p.department), specialisation(p.specialisation), hire_date(p.hire_date) {}//copy constructor
-    void displayProfessor();
+    //void displayProfessor();
 
     ~Professor(){}//destructor
 
@@ -136,11 +136,11 @@ class Professor
         specialisation=s;
     }
 
-    int getHireDate()//getter for hire date
+    string getHireDate()//getter for hire date
     {
         return hire_date;
     }
-    void setHireDate(int h)//setter for hire date
+    void setHireDate(string h)//setter for hire date
     {
         hire_date=h;
     }
@@ -155,13 +155,13 @@ class Course
 {
     int code;
     string title;
-    int credits;
+    float credits;
     string description;
     public:
     Course(): code(0), title(""), credits(0), description("") {}//default constructor
-    Course(int c, string t, int cred, string d):code(c),title(t),credits(cred),description(d) {}//parameterised constructor
+    Course(int c, string t, float cred, string d):code(c),title(t),credits(cred),description(d) {}//parameterised constructor
     Course(const Course  &c):code(c.code),title(c.title),credits(c.credits),description(c.description) {} //copy constructor
-    void displayCourse();
+   // void displayCourse();
     ~Course() {}//destructor
 
     int getCode()//getter for code
@@ -182,11 +182,11 @@ class Course
         title=t;
     }
 
-    int getCredits()//getter for credits
+    float getCredits()//getter for credits
     {
         return credits;
     }
-    void setCredits(int cred)//setter for credits
+    void setCredits(float cred)//setter for credits
     {
         credits=cred;
     }
@@ -212,11 +212,12 @@ class Department
 {
     string name;
     string location;
-    int budget;
+    float budget;
+    public:
     Department():name(""),location(""),budget(0) {}//default constructor
-    Department(string n, string l, int b): name(n),location(l),budget(b) {}//parameterised constructor
+    Department(string n, string l, float b): name(n),location(l),budget(b) {}//parameterised constructor
     Department(const Department &d): name(d.name), location(d.location),budget(d.budget) {} //copy constructor
-    void displayDepartment() {}
+   // void displayDepartment() ;
     ~Department () {}//destructor
 
     string getName()//getter for name
@@ -237,11 +238,11 @@ class Department
         location=l;
     }
 
-    int getBudget()//getter for budget
+    float getBudget()//getter for budget
     {
         return budget;
     }
-    void setBudget(int b)//setter for budget
+    void setBudget(float b)//setter for budget
     {
         budget=b;
     }
@@ -254,6 +255,20 @@ class Department
 
 int main ()
 {
-    
+    Person p1("Guri",19, 107040, 8178969076);
+    Person p2("Kanika",18,12323,9911900664);
+    Student s1;
+    Student s2;
+    Professor prof1;
+    Professor prof2;
+    Course c1;
+    Course c2;
+    Department d1;
+    Department d2;
+
+    p1.displayPerson();
+    p2.displayPerson();
+
+
     return 0;
 }
